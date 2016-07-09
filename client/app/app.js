@@ -21,7 +21,10 @@ angular.module('shortly', [
     })
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',
-      controller: 'shortenController'
+      controller: 'ShortenController'
+    })
+    .otherwise({
+      redirectTo: 'app/auth/signin.html'
     });
 
   // $locationProvider.html5Mode(true);
