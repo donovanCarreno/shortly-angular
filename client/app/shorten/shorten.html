@@ -2,10 +2,12 @@
 <!-- Your code here -->
 <h3>Shorten</h3>
 
-<form ng-click='addLink(url)'>
-  <input type='text' ng-model='url'>
-  <button>Add Link</button>
-</form>  
+<form >
+  <input type='text' ng-model='url' ng-keydown='validate(url)'>
+  <button ng-click='addLink(url)'>Add Link</button>
+</form>   
+
+<h4>{{ valid }}<h4>
 
 <hr>
 DEVELOPMENT EYES ONLY
@@ -14,5 +16,3 @@ DEVELOPMENT EYES ONLY
 </pre>
 </hr>
 </div>
-
-

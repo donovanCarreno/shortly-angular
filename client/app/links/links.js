@@ -10,12 +10,16 @@ angular.module('shortly.links', [])
 .controller('LinksController', function ($scope, Links) {
   // Your code here
   $scope.data = {};
-
-  //$scope.init = function() {
+  
   Links.getAll()
     .then(function(data) {
       $scope.data.links = data;
     });
+
+  $scope.click = function() {
+    var index = this.$index;
+    $scope.data.links[index].visits ++;
+  };
   // $scope.data.links.push(Links.getAll());
   //};
   // $scope.$on('$viewContentLoaded', function() {

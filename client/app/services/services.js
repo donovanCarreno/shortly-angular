@@ -11,7 +11,7 @@ angular.module('shortly.services', [])
       url: '/api/links'
     })
     .then(function(res) {
-      console.log(res);
+      console.log(res.data);
       return res.data;
     });
   };
@@ -23,6 +23,8 @@ angular.module('shortly.services', [])
       data: {url: link}
     });
   };
+
+  // update votes data in database for clicked link to maintain persistence
 
   return {
     getAll: getAll,

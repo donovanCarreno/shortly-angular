@@ -3,5 +3,14 @@
   <h3>links</h3>
   <a href='#/links'>Links</a>
   <a href='#/shorten'>Shorten</a>
-  <input />
+  <input placeholder='filter' ng-model='searchText'/>
+
+  <ul>
+    <li ng-repeat='url in data.links | orderBy: "-visits" | filter:searchText'> 
+    <a href='' ng-click='click()'>{{ url.title }}</a> <br>
+    {{ url.url }} <br> 
+    {{ url.baseUrl + url.code }}
+    <div>{{ url.visits }}</div>
+    </li>
+  </ul>
 </div>
